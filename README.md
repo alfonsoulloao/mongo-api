@@ -51,8 +51,9 @@ Las siguientes son las dependencias utilizadas para desarrollo y pruebas:
 
 ## Ejecución
 
-Para iniciar la API en modo de desarrollo, utiliza el siguiente comando:
+Para iniciar la API en modo de desarrollo, utiliza el siguiente comando:  
 
+    npm run start:dev
 
 Una vez iniciada, la API estará disponible en `http://localhost:3000`.
 
@@ -60,6 +61,7 @@ Una vez iniciada, la API estará disponible en `http://localhost:3000`.
 
 Para ejecutar las pruebas, utiliza el siguiente comando:
 
+  npm test
 
 ## Documentación de la API
 
