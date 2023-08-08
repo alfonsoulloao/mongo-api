@@ -3,9 +3,21 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { environment } from './environments/environment';
+import { ValidationPipe, VersioningType } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  
+  app.useGlobalPipes(new ValidationPipe({
+    disableErrorMessages: false,
+    whitelist: true,    
+  }));
+
+  app.enableVersioning({
+    defaultVersion:'1',
+    type: VersioningType.URI
+  });
+
   const options = new DocumentBuilder()
   .setTitle('NestJS Bundle')
   .setDescription('trabajo con log para minsal')

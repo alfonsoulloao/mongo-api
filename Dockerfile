@@ -1,20 +1,32 @@
-# Use the Node.js 16.8 image with Alpine Linux 3.14 as the base image
-FROM node:16.8-alpine3.14
+#Runtime develop
+FROM node:16.8-alpine3.14 as development
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
 COPY package.json package-lock.json ./
 
-# Install project dependencies
-RUN npm ci --only=production
+RUN npm ci
 
-# Copy the rest of the project files to the working directory
 COPY . .
 
-# Expose the port on which your Nest.js app is running (if applicable)
+RUN npm run build
+
+#Runtime production
+FROM node:16.8-alpine3.14 as production
+
+WORKDIR /app
+
+#copy dependencies files
+COPY package*.json ./
+
+#instal runtime dependencies (without dev dependencies)
+RUN npm ci --omit=dev
+
+#copy production build
+COPY --from=development /app/dist/ ./dist/
+
+#expose aplication port
 EXPOSE 3000
 
-# Set the command to start your Nest.js app
-CMD ["npm", "run", "start:prod"]
+#start aplication
+CMD [ "node","dist/main.js" ]

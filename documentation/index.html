@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mongo-api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">mongo-api documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1>API REST con NestJS y MongoDB</h1>
+<p>Este es un proyecto de API REST creado con NestJS y utiliza MongoDB como base de datos. Permite crear, leer, actualizar y eliminar datos mediante endpoints HTTP. A continuación, se proporciona información sobre cómo configurar, ejecutar y probar la API.</p>
+<h2>Instalación</h2>
+<p>Antes de comenzar, asegúrate de tener instalado Node.js y npm en tu sistema. Luego, sigue estos pasos:</p>
+<ol>
+<li>Clona este repositorio en tu máquina local.</li>
+<li>Navega al directorio del proyecto <code>mongo-api</code>.</li>
+<li>Ejecuta <code>npm install</code> para instalar las dependencias necesarias.</li>
+</ol>
+<h2>Configuración</h2>
+<p>El archivo de configuración de la base de datos se encuentra en el archivo <code>src/app.module.ts</code>. Por defecto, la API está configurada para usar MongoDB. Asegúrate de tener una instancia de MongoDB en ejecución y configura las credenciales en este archivo si es necesario.</p>
+<h2>Scripts de npm</h2>
+<p>A continuación se describen los scripts de npm disponibles para este proyecto:</p>
+<ul>
+<li><code>npm run build</code>: Compila el proyecto NestJS.</li>
+<li><code>npm run format</code>: Formatea el código del proyecto utilizando Prettier.</li>
+<li><code>npm start</code>: Inicia la API en modo de producción.</li>
+<li><code>npm run start:dev</code>: Inicia la API en modo de desarrollo con reinicio automático al detectar cambios.</li>
+<li><code>npm run start:debug</code>: Inicia la API en modo de depuración con reinicio automático al detectar cambios.</li>
+<li><code>npm test</code>: Ejecuta las pruebas utilizando Jest.</li>
+<li><code>npm run test:watch</code>: Ejecuta las pruebas en modo observador.</li>
+<li><code>npm run test:cov</code>: Ejecuta las pruebas y genera informes de cobertura.</li>
+<li><code>npm run lint</code>: Ejecuta ESLint para detectar y corregir problemas de estilo.</li>
+<li><code>npm run test:e2e</code>: Ejecuta pruebas end-to-end utilizando Jest y el archivo de configuración <code>jest-e2e.json</code>.</li>
+</ul>
+<h2>Dependencias principales</h2>
+<p>Las siguientes son las dependencias principales utilizadas en este proyecto:</p>
+<ul>
+<li><code>@nestjs/common</code>, <code>@nestjs/core</code>, <code>@nestjs/mongoose</code>, <code>@nestjs/platform-express</code>: Componentes principales de NestJS para la construcción de aplicaciones.</li>
+<li><code>mongoose</code>: Librería para interactuar con MongoDB.</li>
+<li><code>rxjs</code>: Librería para programación reactiva en JavaScript.</li>
+</ul>
+<h2>Dependencias de desarrollo</h2>
+<p>Las siguientes son las dependencias utilizadas para desarrollo y pruebas:</p>
+<ul>
+<li><code>@nestjs/cli</code>, <code>@nestjs/schematics</code>, <code>@nestjs/testing</code>: Herramientas y utilidades de NestJS para el desarrollo.</li>
+<li><code>@types/express</code>, <code>@types/jest</code>, <code>@types/node</code>, <code>@types/supertest</code>: Tipos de TypeScript para paquetes externos utilizados en el proyecto.</li>
+<li><code>@typescript-eslint/eslint-plugin</code>, <code>@typescript-eslint/parser</code>, <code>eslint</code>, <code>eslint-config-prettier</code>, <code>eslint-plugin-prettier</code>: Herramientas para el linting y formateo de código.</li>
+<li><code>jest</code>: Framework de pruebas.</li>
+<li><code>prettier</code>: Herramienta de formateo de código.</li>
+<li><code>supertest</code>: Biblioteca para realizar pruebas HTTP en Node.js.</li>
+<li><code>ts-jest</code>, <code>ts-loader</code>, <code>ts-node</code>, <code>tsconfig-paths</code>, <code>typescript</code>: Herramientas y compilador de TypeScript.</li>
+</ul>
+<h2>Ejecución</h2>
+<p>Para iniciar la API en modo de desarrollo, utiliza el siguiente comando:  </p>
+<div><pre class="line-numbers"><code class="language-none">npm run start:dev</code></pre></div><p>Una vez iniciada, la API estará disponible en <code>http://localhost:3000</code>.</p>
+<h2>Pruebas</h2>
+<p>Para ejecutar las pruebas, utiliza el siguiente comando:</p>
+<p>  npm test</p>
+<h2>Documentación de la API</h2>
+<p>La documentación de la API, incluyendo los endpoints disponibles, los parámetros y las respuestas, se encuentra disponible en <code>http://localhost:3000/docs</code> cuando la API está en ejecución.</p>
+<h2>Licencia</h2>
+<p>Este proyecto no tiene licencia especificada actualmente (UNLICENSED).</p>
+<h2>Notas</h2>
+<p>Recuerda configurar adecuadamente las credenciales de MongoDB en el archivo <code>src/app.module.ts</code> antes de poner en producción la API.</p>
+<p>¡Disfruta desarrollando tu API REST con NestJS y MongoDB! Si tienes alguna pregunta, no dudes en ponerte en contacto con el autor del proyecto.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

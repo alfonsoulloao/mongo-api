@@ -18,6 +18,14 @@ export class BundleService {
     return logsBundle;
   }
 
+  async getLogBundlesByDateRange(startDate: string, endDate: string): Promise<LogBundle[]> {
+    const logsBundle = await this.bundleModel.find({
+      date: { $gte: startDate, $lte: endDate }
+    });
+  
+    return logsBundle;
+  }
+
   async getLogBundle(logId: string): Promise<LogBundle> {
     const logBundle = await this.bundleModel.findById(logId);
     return logBundle;

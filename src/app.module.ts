@@ -8,10 +8,8 @@ import { environment } from './environments/environment';
 
 @Module({
   imports: [
-    BundleModule,
-    MongooseModule.forRoot(`mongodb://${ environment.mongodbDev.host }:${ environment.mongodbDev.port}/${ environment.mongodbDev.database }`),
-    //MongooseModule.forRoot('mongodb://localhost:27020/logBundle'),
-    //MongooseModule.forRoot('mongodb://indra:jahgai4veith3ie2@172.20.6.73:27017/hcc'),
+    BundleModule,   
+    MongooseModule.forRoot(`mongodb://${environment.mongodb.user}:${environment.mongodb.password}@${environment.mongodb.host}:${environment.mongodb.port}/${environment.mongodb.database}`),
   ],
   controllers: [AppController],
   providers: [AppService],
